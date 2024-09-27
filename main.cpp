@@ -1,38 +1,59 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
 
 using namespace std;
 
-class Student
+class Color
 {
-private: // Private variables
-int ID;
-double GPA;
-string name;
+private:
+    int red;
+    int green;
+    int blue;
 
-public: // Public methods
-void set_ID(int i) { ID = i;}
-int get_ID() { return ID; }
-void set_GPA(double newGPA) { GPA = newGPA; }
-double get_GPA() { return GPA; }
-void set_name(string newName) { name = newName; }
-string get_name() { return name; }
+public:
+    // Setters
+    void set_Red(int redValue) { red = redValue; }
+    void set_Green(int greenValue) { green = greenValue; }
+    void set_Blue(int blueValue) { blue = blueValue; }
 
-
+    // Getters
+    int get_Red() { return red; }
+    int get_Green() { return green; }
+    int get_Blue() { return blue; }
+    
+    // Print 
+    void print_RGB() 
+    { 
+        cout << "Red: " << red << endl; 
+        cout << "Green: " << green << endl;
+        cout << "Blue: " << blue << endl;
+    }
 };
 
 int main()
 {
+    Color Purple;
+    // Initialize Purple Hex Colors
+    Purple.set_Red(157);
+    Purple.set_Green(0);
+    Purple.set_Blue(255);
+    cout << "Purple RGB Colors are: " << endl;
+    Purple.print_RGB();
 
-    Student Taylor;
-    string tempName;
-    cout << "Enter Student's Name: ";
-    cin >> tempName;
-    Taylor.set_name(tempName);
-    cout << "The Students name is: " << Taylor.get_name() << endl;
+    Color Crimson;
+    // Initialize Crimson Hex Colors
+    Crimson.set_Red(220);
+    Crimson.set_Green(20);
+    Crimson.set_Blue(60);
+    cout << "Crimson RGB Colors are: " << endl;
+    Crimson.print_RGB();
 
+    Color Mustard;
+    // Initialize Mustard Hex Colors
+    Mustard.set_Red(225);
+    Mustard.set_Green(173);
+    Mustard.set_Blue(1);
+    cout << "Mustard RGB Colors are: " << endl;
+    Mustard.print_RGB();
 
     return 0;
 }
